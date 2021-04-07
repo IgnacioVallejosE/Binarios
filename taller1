@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class Numerosbinarios {
+
+    static Scanner teclado = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("ingresar numero a validar");
+        leerNum();
+        int numtobin = leerNum();
+        validarNum(numtobin);
+        convertirEntero();
+
+
+    }
+
+    private static int leerNum(){
+        int numtobin = teclado.nextInt();
+        return numtobin;
+    }
+
+    private static boolean validarNum(int numero){
+        int numvalido = numero;
+        while(numvalido<0 || numvalido>255){
+            System.out.println("error! \n reintentar");
+            leerNum();
+        }
+        return true;
+    }
+
+    private static boolean validarBin8Bits(int[] numBin){
+        String Binario = Integer.toString(numBin);
+        while(Binario.length()>8){
+            System.out.println("error! \n reintentar");
+            leerNum();
+        }
+        return true;
+    }
+
+    private static int convertirEntero(int numBin[]){
+        int exp=0, resto;
+        double bin=0;
+        do{
+            numBin = numBin;
+        }while(numBin < 0);
+
+
+        while(numBin!=0) {
+            resto = numBin % 2;
+            bin = bin + resto * Math.pow(10, exp);
+            exp++;
+            numBin = numBin / 2;
+        }
+        return bin;
+    }
+
+    private static int[] convertirBin8Bits(int num){
+
+    }
+
+    private static void imprimirNumBin8Bits(int[] numBin){
+
+    }
+
+    private static void imprimirNumDecimal(int numero){
+
+    }
+}
